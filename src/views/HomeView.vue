@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue';
-import {useSearchIPGeolocation} from '@/composable/SearchIP'
-
-const myIP = ref()
-const { searchMyIP } = useSearchIPGeolocation()
+import MapContainer from '@/components/MapContainer.vue';
+import InfoVisualization from '@/components/InfoVisualization.vue';
 </script>
 
 <template>
   <div>
-    <label for="">Digite o endereço IP: </label>
-    <input class="border" type="text" v-model="myIP">
-    <button class="border bg-blue-500 rounded-md p-2 text-white" @click="searchMyIP(myIP)">Enviar solicitação</button>
+    <InfoVisualization />
+    <div class="h-screen w-screen">
+      <nav class="h-52 bg-[url('../src/assets/pattern-bg-desktop.png')] bg-cover" />
+      <MapContainer />
+    </div>
   </div>
 </template>
