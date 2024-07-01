@@ -1,20 +1,20 @@
 <template>
   <div class="bg-white text-center p-6 rounded-xl w-full flex flex-col gap-4 md:flex-row md:max-w-5xl md:justify-around">
     <div class="md:text-start">
-      <span>IP ADDRESS</span>
-      <p>{{ info.ipAdrress }}</p>
+      <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Ip Address</span>
+      <p class="font-bold text-very-dark-gray">{{ info.ipAdrress }}</p>
     </div>
     <div class="md:text-start md:border-l md:pl-4">
-      <span>LOCATION</span>
-      <p>{{ info.Location }}</p>
+      <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Location</span>
+      <p class="font-bold text-very-dark-gray">{{ info.Location }}</p>
     </div>
     <div class="md:text-start md:border-l md:pl-4">
-      <span>TIMEZONE</span>
-      <p>{{ info.Timezone }}</p>
+      <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Timezone</span>
+      <p class="font-bold text-very-dark-gray">{{ info.Timezone }}</p>
     </div>
     <div class="md:text-start md:border-l md:pl-4">
-      <span>ISP</span>
-      <p>{{ info.ISP }}</p>
+      <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Isp</span>
+      <p class="font-bold text-very-dark-gray">{{ info.ISP }}</p>
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@ import InfoVisualization from '@/components/InfoVisualization.vue';
 <template>
   <div>
     <InfoVisualization />
-    <div class="h-screen w-screen">
+    <div class="h-screen w-screen font-rubik">
       <nav class="h-52 bg-[url('../src/assets/pattern-bg-desktop.png')] bg-cover" />
       <MapContainer />
     </div>

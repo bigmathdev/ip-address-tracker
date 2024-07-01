@@ -5,14 +5,15 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      // 'Very-Dark-Gray': hsl(0, 0%, 17%),
-      // 'Dark-Gray': hsl(0, 0%, 59%)
-    },
     fontFamily: {
-    
+      sans: ['Rubik', 'sans-serif']
     },
-    extend: {},
+    extend: {
+      colors: {
+        'very-dark-gray': '#2b2b2b',  
+        'dark-gray': '#969696',
+      },
+    },
   },
   plugins: [],
 }
