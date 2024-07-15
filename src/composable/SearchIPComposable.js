@@ -8,7 +8,7 @@ export const useSearchIPGeolocation = () => {
 
   const searchMyIP = (ip) => {
     axios
-    .get(`https://geo.ipify.org/api/v2/country?apiKey=${ipifyKey}&ipAddress=${ip}`)
+    .get(`https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyKey}&ipAddress=${ip}`)
     .then((response) => {
       resultRequest.value = response.data
     })

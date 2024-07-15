@@ -7,11 +7,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import SearchIP from '@/components/SearchIP.vue'
 import InfoCard from '@/components/InfoCard.vue'
 
 const result = ref()
+const emit = defineEmits(['centerMap'])
+
+watch(result, () => {
+  emit('centerMap', [result.value.location.lng, result.value.location.lat])
+})
+
 </script>
 
 <style></style>

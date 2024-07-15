@@ -6,7 +6,7 @@
     </div>
     <div class="md:text-start md:border-l md:pl-4">
       <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Location</span>
-      <p class="font-bold text-very-dark-gray">{{ props.result ? `${props.result.location.region}, ${props.result.location.country}` : '' }}</p>
+      <p class="font-bold text-very-dark-gray">{{ props.result ? `${props.result.location.city}, ${props.result.location.region}, ${props.result.location.country}` : '' }}</p>
     </div>
     <div class="md:text-start md:border-l md:pl-4">
       <span class="uppercase text-[0.60rem] font-bold text-dark-gray ">Timezone</span>
