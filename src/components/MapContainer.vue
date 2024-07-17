@@ -4,40 +4,36 @@
 
 <script setup>
 import { onMounted, ref, watch } from 'vue';
+import { storeToRefs } from 'pinia';
 import mapboxgl from 'mapbox-gl';
+
+import { useSearchIPStore } from '@/stores/SearchIPStore';
+
+const IpStore = useSearchIPStore()
+const { searchMyIP } = IpStore
+const { centerMap } = storeToRefs(IpStore)
 
 const mapKey = import.meta.env.VITE_MAPBOX_KEY
 const map = ref(null)
 mapboxgl.accessToken = mapKey
 
-const props = defineProps({
-  centerMap: Array
-})
-
-onMounted(()=> {
+onMounted(() => {
+  searchMyIP()
   map.value = new mapboxgl.Map({
     container: map.value,
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: props.centerMap ? props.centerMap : [-46.6361100, -23.5475000],
+    center: centerMap.value ? centerMap.value : [-46.6361100, -23.5475000],
     zoom: 9,
   })
-  
-  // new mapboxgl.Marker({anchor: 'center', color: 'black'})
-  // .setLngLat([-46.6361100, -23.5475000])
-  // .addTo(map.value)
 })
 
-watch(() => props.centerMap, (value) => {
-  map.value.flyTo({ 
-    center: value ,
+watch(centerMap, (value) => {
+  map.value.flyTo({
+    center: value,
     essential: true,
     speed: 0.2,
     zoom: 9,
   })
-
-  // map.value = new mapboxgl.Marker({color: 'black'})
-  // .setLngLat(value)
-  // .addTo(map.value);
 })
 
 </script>
@@ -51,5 +47,4 @@ watch(() => props.centerMap, (value) => {
   height: calc(100% - 13rem);
   width: 100%;
 }
-
 </style>
