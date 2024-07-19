@@ -26,8 +26,7 @@ onMounted(async () => {
     center: centerMap.value,
     zoom: 9,
   })
-
-  new mapboxgl.Marker({color: 'black'}).setLngLat(centerMap.value).addTo(map.value)
+  new mapboxgl.Marker({ color: 'black' }).setLngLat(centerMap.value).addTo(map.value)
 })
 
 watch(centerMap, (value) => {
@@ -37,25 +36,18 @@ watch(centerMap, (value) => {
     speed: 0.2,
     zoom: 9,
   })
-
-  new mapboxgl.Marker({color: 'black'}).setLngLat(value).addTo(map.value)
+  new mapboxgl.Marker({ color: 'black' }).setLngLat(value).addTo(map.value)
 })
 
 </script>
 
 <style>
 .mapboxgl-control-container {
-  @apply hidden
+  @apply hidden;
 }
 
 #map {
-  height: calc(100% - 13rem);
+  height: 100%;
   width: 100%;
 }
-
-/* @media screen and (min-width: 260px) {
-  #map {
-    height: calc(100% - 19rem)
-  }
-} */
 </style>
