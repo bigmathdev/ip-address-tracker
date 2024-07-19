@@ -1,57 +1,35 @@
-# ip-address-tracker
+# IP Address Tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+O projeto IP Address é uma aplicação web que permite aos usuários consultar informações sobre sua rede, como por exemplo seu IP, domínio e localização. Este é um desafio proposto pela plataforma (https://www.frontendmentor.io)
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Consulta de IP
+- Adquiri informações sobre sua rede, como IP e domínio
+- Visualização do mapa com localização do IP
+- Interface responsiva e amigável
+- Multiplataforma
 
-## Customize configuration
+## Stack utilizada
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+A aplicação utiliza uma variedade de tecnologias modernas para fornecer uma experiência completa e responsiva. O front-end é construído com HTML, CSS e Javascript, utilizando o framework Vue.js para a interatividade e reatividade. O design é estilizado com TailwindCSS, garantindo uma estética atraente e consistente. Utilizei também Pinia para fazer o gerenciamento de estado da aplicação.
 
-## Project Setup
+## Aprendizados
 
-```sh
-npm install
-```
+Nesse projeto me propus o desafio de criar toda a aplicação utilizando o gerenciamento de estado do Pinia, o que me gerou um código muito mais organizado, conciso e fácil de ser compreendido.
 
-### Compile and Hot-Reload for Development
+No geral, esse projeto proporcionou uma valiosa experiência de aprendizado, ajudando-me a desenvolver minhas habilidades com gerenciamento de estados em aplicações web e a enfrentar desafios técnicos de forma eficaz.
+## Autor
 
-```sh
-npm run dev
-```
+- [<img loading="lazy" src="https://avatars.githubusercontent.com/u/83350374?v=4" width=115><br><sub>Matheus Santos</sub>](https://github.com/bigmathdev)
+## Licença
 
-### Compile and Minify for Production
+[MIT](https://choosealicense.com/licenses/mit/)
 
-```sh
-npm run build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Referências
+ - [Vue.js](https://vuejs.org/)
+ - [Pinia](https://pinia.vuejs.org/)
+ - [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides)
+ - [Ipify](https://geo.ipify.org/)
+ - [FrontendMentor](https://www.frontendmentor.io)
