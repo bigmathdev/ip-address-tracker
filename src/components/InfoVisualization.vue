@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute p-4 flex flex-col w-full items-center gap-8">
-    <h1 class="text-white text-2xl font-medium">IP Address Tracker</h1>
+  <div class="absolute flex w-full flex-col items-center gap-8 p-4">
+    <h1 class="text-2xl font-medium text-white drop-shadow-lg">IP Address Tracker</h1>
     <SearchIP />
     <InfoCard />
   </div>

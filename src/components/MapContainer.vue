@@ -3,11 +3,11 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue';
-import { storeToRefs } from 'pinia';
-import mapboxgl from 'mapbox-gl';
+import { onMounted, ref, watch } from 'vue'
+import { storeToRefs } from 'pinia'
+import mapboxgl from 'mapbox-gl'
 
-import { useSearchIPStore } from '@/stores/SearchIPStore';
+import { useSearchIPStore } from '@/stores/SearchIPStore'
 
 const IpStore = useSearchIPStore()
 const { searchMyIP } = IpStore
@@ -18,15 +18,14 @@ const map = ref(null)
 
 mapboxgl.accessToken = mapKey
 
-onMounted(async () => {
-  await searchMyIP()
+onMounted(() => {
   map.value = new mapboxgl.Map({
     container: map.value,
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: centerMap.value,
-    zoom: 9,
+    center: [-46.6333094, -23.5505199],
+    zoom: 9
   })
-  new mapboxgl.Marker({ color: 'black' }).setLngLat(centerMap.value).addTo(map.value)
+  searchMyIP()
 })
 
 watch(centerMap, (value) => {
@@ -34,11 +33,10 @@ watch(centerMap, (value) => {
     center: value,
     essential: true,
     speed: 0.2,
-    zoom: 9,
+    zoom: 9
   })
   new mapboxgl.Marker({ color: 'black' }).setLngLat(value).addTo(map.value)
 })
-
 </script>
 
 <style>
@@ -47,7 +45,13 @@ watch(centerMap, (value) => {
 }
 
 #map {
-  height: 100%;
+  height: calc(100% - 18rem);
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #map {
+    height: calc(100% - 13rem);
+  }
 }
 </style>

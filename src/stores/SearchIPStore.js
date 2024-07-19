@@ -13,7 +13,7 @@ export const useSearchIPStore = defineStore('SearchIPStore', () => {
       const response = await axios.get(
         `https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyKey}${ip ? `&ipAddress=${ip}` : ''}`
       )
-      resultRequest.value = await response.data
+      resultRequest.value = response.data
       centerMap.value = [resultRequest.value.location.lng, resultRequest.value.location.lat]
     } catch (error) {
       console.log(error)

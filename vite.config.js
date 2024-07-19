@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     VueDevTools(),
   ],
+  base: '/ip-address-tracker',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
