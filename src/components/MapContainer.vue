@@ -15,16 +15,19 @@ const { centerMap } = storeToRefs(IpStore)
 
 const mapKey = import.meta.env.VITE_MAPBOX_KEY
 const map = ref(null)
+
 mapboxgl.accessToken = mapKey
 
-onMounted(() => {
-  searchMyIP()
+onMounted(async () => {
+  await searchMyIP()
   map.value = new mapboxgl.Map({
     container: map.value,
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: centerMap.value ? centerMap.value : [-46.6361100, -23.5475000],
+    center: centerMap.value,
     zoom: 9,
   })
+
+  new mapboxgl.Marker({color: 'black'}).setLngLat(centerMap.value).addTo(map.value)
 })
 
 watch(centerMap, (value) => {
@@ -34,6 +37,8 @@ watch(centerMap, (value) => {
     speed: 0.2,
     zoom: 9,
   })
+
+  new mapboxgl.Marker({color: 'black'}).setLngLat(value).addTo(map.value)
 })
 
 </script>
@@ -47,4 +52,10 @@ watch(centerMap, (value) => {
   height: calc(100% - 13rem);
   width: 100%;
 }
+
+/* @media screen and (min-width: 260px) {
+  #map {
+    height: calc(100% - 19rem)
+  }
+} */
 </style>

@@ -1,4 +1,5 @@
 import './assets/main.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
