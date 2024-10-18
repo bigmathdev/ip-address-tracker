@@ -10,7 +10,6 @@ import mapboxgl from 'mapbox-gl'
 import { useSearchIPStore } from '@/stores/SearchIPStore'
 
 const IpStore = useSearchIPStore()
-const { searchMyIP } = IpStore
 const { centerMap } = storeToRefs(IpStore)
 
 const mapKey = import.meta.env.VITE_MAPBOX_KEY
@@ -25,7 +24,6 @@ onMounted(() => {
     center: [-46.6333094, -23.5505199],
     zoom: 9
   })
-  searchMyIP()
 })
 
 watch(centerMap, (value) => {
@@ -35,6 +33,7 @@ watch(centerMap, (value) => {
     speed: 0.2,
     zoom: 9
   })
+  
   new mapboxgl.Marker({ color: 'black' }).setLngLat(value).addTo(map.value)
 })
 </script>
